@@ -12,8 +12,8 @@
         }
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2d3436;
             overflow-x: hidden;
         }
         .screen {
@@ -36,13 +36,14 @@
         .big-title {
             font-size: 3em;
             margin-bottom: 50px;
-            opacity: 0.9;
+            color: #2d3436;
+            font-weight: 300;
         }
         .probability-display {
             font-size: 8em;
             font-weight: bold;
-            color: #ff6b6b;
-            text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+            color: #e74c3c;
+            text-shadow: 0 0 30px rgba(231, 76, 60, 0.3);
             margin: 30px 0;
             min-height: 120px;
             animation: pulse 2s ease-in-out infinite;
@@ -60,7 +61,7 @@
             width: 100%;
             height: 8px;
             border-radius: 5px;
-            background: rgba(255,255,255,0.3);
+            background: #ddd;
             outline: none;
             -webkit-appearance: none;
         }
@@ -69,30 +70,31 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background: #ff6b6b;
+            background: #e74c3c;
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(255, 107, 107, 0.7);
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.4);
         }
         .year-display {
             font-size: 2em;
             margin: 20px 0;
             text-align: center;
+            color: #2d3436;
         }
         .visual-bar {
             width: 80vw;
             max-width: 600px;
             height: 60px;
-            background: rgba(255,255,255,0.2);
+            background: #ddd;
             border-radius: 30px;
             position: relative;
             overflow: hidden;
         }
         .probability-fill {
             height: 100%;
-            background: linear-gradient(90deg, #ff6b6b, #ee5a52);
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
             border-radius: 30px;
             transition: width 0.5s ease;
-            box-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+            box-shadow: 0 0 30px rgba(231, 76, 60, 0.3);
         }
         .navigation {
             position: absolute;
@@ -100,18 +102,20 @@
             right: 30px;
         }
         .nav-button {
-            background: rgba(255,255,255,0.2);
-            border: 2px solid white;
+            background: #3498db;
+            border: none;
             color: white;
             padding: 15px 30px;
             border-radius: 50px;
             cursor: pointer;
             font-size: 16px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
         .nav-button:hover {
-            background: rgba(255,255,255,0.3);
-            transform: scale(1.05);
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
         }
         
         /* Screen 2: 深層数学画面 */
@@ -123,81 +127,89 @@
         }
         .lang-toggle {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 30px;
+            right: 30px;
             display: flex;
-            gap: 10px;
+            gap: 0;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .lang-btn {
-            background: rgba(255,255,255,0.2);
-            border: 1px solid white;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
+            background: white;
+            border: none;
+            color: #636e72;
+            padding: 12px 20px;
             cursor: pointer;
             font-size: 14px;
             transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .lang-btn:first-child {
+            border-radius: 25px 0 0 25px;
+        }
+        .lang-btn:last-child {
+            border-radius: 0 25px 25px 0;
         }
         .lang-btn.active {
-            background: rgba(255,255,255,0.4);
+            background: #3498db;
+            color: white;
+        }
+        .lang-btn:hover:not(.active) {
+            background: #f1f2f6;
         }
         .section {
-            background: rgba(255,255,255,0.1);
+            background: white;
             border-radius: 15px;
             padding: 25px;
             margin: 20px 0;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #3498db;
         }
-        .level-indicator {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        .level-elementary { background: #00b894; }
-        .level-middle { background: #fdcb6e; color: #2d3436; }
-        .level-high { background: #e17055; }
-        .level-university { background: #a29bfe; }
-        .level-advanced { background: #fd79a8; }
-        
         .section-title {
             font-size: 1.8em;
             margin-bottom: 15px;
-            color: #ffeaa7;
+            color: #2d3436;
+            font-weight: 600;
         }
         .formula {
             font-family: 'Courier New', monospace;
-            background: rgba(0,0,0,0.3);
+            background: #f8f9fa;
             padding: 15px;
             border-radius: 10px;
             margin: 15px 0;
             font-size: 1.1em;
             border-left: 4px solid #74b9ff;
+            color: #2d3436;
         }
         .explanation {
             line-height: 1.6;
             margin: 15px 0;
+            color: #636e72;
         }
         .highlight {
-            background: rgba(255,235,167,0.3);
+            background: #fff3cd;
             padding: 2px 6px;
             border-radius: 4px;
-            color: #ffeaa7;
+            color: #856404;
             font-weight: bold;
         }
         .back-button {
             position: absolute;
             top: 30px;
             left: 30px;
-            background: none;
-            border: 2px solid white;
-            color: white;
+            background: white;
+            border: 2px solid #3498db;
+            color: #3498db;
             padding: 10px 20px;
             border-radius: 25px;
             cursor: pointer;
             font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: #3498db;
+            color: white;
         }
         .comparison-grid {
             display: grid;
@@ -206,20 +218,25 @@
             margin: 20px 0;
         }
         .concept-box {
-            background: rgba(0,0,0,0.2);
+            background: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
             border-left: 4px solid;
         }
-        .wrong { border-color: #ff6b6b; }
-        .correct { border-color: #00b894; }
+        .wrong { border-color: #e74c3c; }
+        .correct { border-color: #27ae60; }
+        .concept-box h4 {
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
         .advanced-note {
-            background: rgba(162,155,254,0.2);
-            border: 1px solid #a29bfe;
+            background: #e8f4fd;
+            border: 1px solid #74b9ff;
             padding: 15px;
             border-radius: 10px;
             margin: 15px 0;
             font-style: italic;
+            color: #0984e3;
         }
     </style>
 </head>
@@ -265,7 +282,7 @@
                     <h2 class="section-title">毎日くじ引きをしたら？</h2>
                     <div class="explanation">
                         地震は<span class="highlight">毎日0.011%の確率のくじ引き</span>と同じ!<br>
-                        30年間,毎日毎日引き続けると、約70%の確率？？！
+                        30年間毎日引き続けると、約70%の確率??!
                     </div>
                 </div>
 
@@ -273,17 +290,17 @@
                     <h2 class="section-title">くじが"当たる" = くじが"当たらない" の逆？</h2>
                     <div class="comparison-grid">
                         <div class="concept-box wrong">
-                            <h4>❌ 間違った計算</h4>
-                            <div class="formula">0.011% × 365日 => 4.0%</div>
+                            <h4>❌ 掛けじゃない</h4>
+                            <div class="formula">0.011% × 365日 = 4.0%</div>
                         </div>
                         <div class="concept-box correct">
-                            <h4>✅ 正しい計算</h4>
-                            <div class="formula">1 - (99.989%)^365 => 3.9%</div>
+                            <h4>✅ 複利計算</h4>
+                            <div class="formula">1 - (99.989%)^365 = 3.9%</div>
                         </div>
                     </div>
                     <div class="explanation">
-                        step1:連続して"当たらない"日は、何回連続？<br>
-                        step2:毎日99.989%で「外れ」続ける確率 -> 最後に「1-」で反転!!
+                        step1 : 連続して"当たらない"日は、何回連続？<br>
+                        step2 : 毎日99.989%の確率で「外れ」続ける確率を計算 -> 最後に「1-」で反転!!
                     </div>
                 </div>
 
@@ -293,10 +310,10 @@
 P(t) = 1 - (1 - p)^t<br>
 ここで：p = 日次確率、t = 日数
                     </div>
-                    <canvas id="exponentialGraph" width="600" height="300" style="background: rgba(255,255,255,0.1); border-radius: 10px; margin: 20px 0;"></canvas>
+                    <canvas id="exponentialGraph" width="600" height="300" style="background: white; border-radius: 10px; margin: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"></canvas>
                     <div class="explanation">
-                        <span class="highlight">(1-p)^t</span>は指数関数...時間と共に減少し、<br>
-                        結果<span class="highlight">P(t)</span>は増加します。これを「非線形」と表現します。
+                        <span class="highlight">(1-p)^t</span>は指数関数。時間と共に急激に減少、<br>
+                        結果として<span class="highlight">P(t)</span>は急激に増加。これが「非線形」といいます。
                     </div>
                 </div>
 
@@ -311,9 +328,8 @@ f(t) = λe^(-λt) (確率密度関数)<br>
 F(t) = 1 - e^(-λt) (累積分布関数)
                     </div>
                     <div class="explanation">
-                        ポアソン過程：毎日が<span class="highlight">「新鮮な気持ち」</span>で感じる。<br>
-                        昨日地震がなかったことは、今日の地震確率に関係ない。<br>
-                        過去がなかったことにする。毎日新鮮！"状態を持たない"!!
+                        ポアソン過程：毎日を<span class="highlight">「新鮮な気持ち」</span>で感じる。<br>
+                        過去が無かったことにする。"状態を持たない"。
                     </div>
                 </div>
 
@@ -325,14 +341,14 @@ P(T ≤ t) = ∫₀ᵗ λe^(-λs) ds = [-e^(-λs)]₀ᵗ = 1 - e^(-λt)<br><br>
 σ-代数：ℱ = σ({[0,t] : t ≥ 0})<br>
 確率測度：P([0,t]) = ∫₀ᵗ f(s)ds
                     </div>
-                    <canvas id="integralSurface" width="600" height="400" style="background: rgba(255,255,255,0.1); border-radius: 10px; margin: 20px 0;"></canvas>
+                    <canvas id="integralSurface" width="600" height="400" style="background: white; border-radius: 10px; margin: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"></canvas>
                     <div class="explanation">
-                        確率は時間軸上の<span class="highlight">測度</span>として表現。3次元描写では：<br>
+                        確率は時間軸上の<span class="highlight">測度</span>として表現されます。上の3次元描写では：<br>
                         • X軸：時間 t<br>
                         • Y軸：確率密度 f(t) = λe^(-λt)<br>
                         • Z軸：累積確率 F(t)<br><br>
-                        曲面下の確率測度を表現。<br>
-                        指数分布の減衰と、積分による累積。<br><br>
+                        曲面下の体積が確率測度を表現しています。<br>
+                        指数分布の優雅な減衰と、積分による累積の幾何学的美しさが見えるでしょう。<br><br>
                         <span class="highlight">無記憶性</span>：P(T > s+t | T > s) = P(T > t) = e^(-λt)<br>
                         これは条件付き確率の幾何学的な「平行移動不変性」。
                     </div>
@@ -373,7 +389,7 @@ P(T ≤ t) = ∫₀ᵗ λe^(-λs) ds = [-e^(-λs)]₀ᵗ = 1 - e^(-λt)<br><br>
 P(t) = 1 - (1 - p)^t<br>
 where: p = daily probability, t = number of days
                     </div>
-                    <canvas id="exponentialGraphEn" width="600" height="300" style="background: rgba(255,255,255,0.1); border-radius: 10px; margin: 20px 0;"></canvas>
+                    <canvas id="exponentialGraphEn" width="600" height="300" style="background: white; border-radius: 10px; margin: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"></canvas>
                     <div class="explanation">
                         <span class="highlight">(1-p)^t</span> is an exponential function that decreases rapidly as t increases,<br>
                         making <span class="highlight">P(t)</span> increase non-linearly.
@@ -405,7 +421,7 @@ Measure space: (Ω, ℱ, P)<br>
 σ-algebra: ℱ = σ({[0,t] : t ≥ 0})<br>
 Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
                     </div>
-                    <canvas id="integralSurfaceEn" width="600" height="400" style="background: rgba(255,255,255,0.1); border-radius: 10px; margin: 20px 0;"></canvas>
+                    <canvas id="integralSurfaceEn" width="600" height="400" style="background: white; border-radius: 10px; margin: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"></canvas>
                     <div class="explanation">
                         Probability is expressed as <span class="highlight">measure</span> on the time axis. In the 3D visualization above:<br>
                         • X-axis: Time t<br>
@@ -460,14 +476,14 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             probabilityFill.style.width = Math.min(percentage, 100) + '%';
             
             if (percentage > 50) {
-                probabilityDisplay.style.color = '#ff4757';
-                probabilityFill.style.background = 'linear-gradient(90deg, #ff4757, #c44569)';
+                probabilityDisplay.style.color = '#c0392b';
+                probabilityFill.style.background = 'linear-gradient(90deg, #c0392b, #a93226)';
             } else if (percentage > 20) {
-                probabilityDisplay.style.color = '#ffa502';
-                probabilityFill.style.background = 'linear-gradient(90deg, #ffa502, #ff6348)';
+                probabilityDisplay.style.color = '#e67e22';
+                probabilityFill.style.background = 'linear-gradient(90deg, #e67e22, #d35400)';
             } else {
-                probabilityDisplay.style.color = '#ff6b6b';
-                probabilityFill.style.background = 'linear-gradient(90deg, #ff6b6b, #ee5a52)';
+                probabilityDisplay.style.color = '#e74c3c';
+                probabilityFill.style.background = 'linear-gradient(90deg, #e74c3c, #c0392b)';
             }
         }
         
@@ -498,11 +514,25 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             const graphHeight = height - 2 * padding;
             
             // 背景をクリア
-            ctx.fillStyle = 'rgba(255,255,255,0.05)';
+            ctx.fillStyle = 'white';
             ctx.fillRect(0, 0, width, height);
             
+            // グリッド線
+            ctx.strokeStyle = '#f1f2f6';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            for (let i = 0; i <= 10; i++) {
+                const x = padding + (i / 10) * graphWidth;
+                const y = padding + (i / 10) * graphHeight;
+                ctx.moveTo(x, padding);
+                ctx.lineTo(x, height - padding);
+                ctx.moveTo(padding, y);
+                ctx.lineTo(width - padding, y);
+            }
+            ctx.stroke();
+            
             // 軸を描画
-            ctx.strokeStyle = '#ffffff';
+            ctx.strokeStyle = '#2d3436';
             ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.moveTo(padding, height - padding);
@@ -512,13 +542,13 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             ctx.stroke();
             
             // 指数関数 (1-p)^t のグラフ
-            ctx.strokeStyle = '#ff6b6b';
+            ctx.strokeStyle = '#e74c3c';
             ctx.lineWidth = 3;
             ctx.beginPath();
             const maxT = 50;
             for (let i = 0; i <= graphWidth; i++) {
                 const t = (i / graphWidth) * maxT;
-                const y = Math.pow(1 - DAILY_PROB * 365, t); // 年単位で計算
+                const y = Math.pow(1 - DAILY_PROB * 365, t);
                 const x = padding + i;
                 const plotY = height - padding - (y * graphHeight);
                 
@@ -531,7 +561,7 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             ctx.stroke();
             
             // 累積確率 P(t) = 1 - (1-p)^t のグラフ
-            ctx.strokeStyle = '#74b9ff';
+            ctx.strokeStyle = '#3498db';
             ctx.lineWidth = 3;
             ctx.beginPath();
             for (let i = 0; i <= graphWidth; i++) {
@@ -549,21 +579,21 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             ctx.stroke();
             
             // ラベル
-            ctx.fillStyle = '#ffffff';
+            ctx.fillStyle = '#2d3436';
             ctx.font = '14px Arial';
             ctx.fillText(isEnglish ? 'Years' : '年', width - padding - 30, height - 20);
             ctx.fillText(isEnglish ? 'Probability' : '確率', 10, 30);
             
             // 凡例
-            ctx.fillStyle = '#ff6b6b';
+            ctx.fillStyle = '#e74c3c';
             ctx.fillRect(padding + 20, 30, 20, 10);
-            ctx.fillStyle = '#ffffff';
-            ctx.fillText(isEnglish ? '(1-p)^t' : '(1-p)^t', padding + 50, 40);
+            ctx.fillStyle = '#2d3436';
+            ctx.fillText('(1-p)^t', padding + 50, 40);
             
-            ctx.fillStyle = '#74b9ff';
+            ctx.fillStyle = '#3498db';
             ctx.fillRect(padding + 120, 30, 20, 10);
-            ctx.fillStyle = '#ffffff';
-            ctx.fillText(isEnglish ? 'P(t)' : 'P(t)', padding + 150, 40);
+            ctx.fillStyle = '#2d3436';
+            ctx.fillText('P(t)', padding + 150, 40);
         }
         
         function draw3DSurface(canvasId, isEnglish = false) {
@@ -575,16 +605,15 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             const height = canvas.height;
             
             // 背景をクリア
-            ctx.fillStyle = 'rgba(255,255,255,0.05)';
+            ctx.fillStyle = 'white';
             ctx.fillRect(0, 0, width, height);
             
             // 簡単な3D風の表現
             const centerX = width / 2;
             const centerY = height / 2;
-            const scale = 150;
             
             // Z軸（累積確率）
-            ctx.strokeStyle = '#a29bfe';
+            ctx.strokeStyle = '#9b59b6';
             ctx.lineWidth = 3;
             ctx.beginPath();
             ctx.moveTo(centerX, centerY + 100);
@@ -592,7 +621,7 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             ctx.stroke();
             
             // X軸（時間）
-            ctx.strokeStyle = '#fdcb6e';
+            ctx.strokeStyle = '#f39c12';
             ctx.lineWidth = 3;
             ctx.beginPath();
             ctx.moveTo(centerX - 150, centerY + 50);
@@ -600,7 +629,7 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             ctx.stroke();
             
             // Y軸（確率密度）
-            ctx.strokeStyle = '#e17055';
+            ctx.strokeStyle = '#e74c3c';
             ctx.lineWidth = 3;
             ctx.beginPath();
             ctx.moveTo(centerX - 50, centerY + 100);
@@ -608,20 +637,20 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             ctx.stroke();
             
             // 指数分布曲線
-            ctx.strokeStyle = '#00b894';
+            ctx.strokeStyle = '#27ae60';
             ctx.lineWidth = 4;
             ctx.beginPath();
             const lambda = DAILY_PROB * 365;
             for (let i = 0; i <= 100; i++) {
-                const t = (i / 100) * 10; // 0から10年
+                const t = (i / 100) * 10;
                 const density = lambda * Math.exp(-lambda * t);
                 const cumulative = 1 - Math.exp(-lambda * t);
                 
-                const x = centerX + (t - 5) * 20; // 時間軸
-                const y = centerY + 50 - density * 1000; // 確率密度軸
-                const z = centerY - cumulative * 150; // 累積確率軸
+                const x = centerX + (t - 5) * 20;
+                const y = centerY + 50 - density * 1000;
+                const z = centerY - cumulative * 150;
                 
-                // 3D投影（簡単な等角投影）
+                // 3D投影
                 const projX = x + (z - centerY) * 0.3;
                 const projY = y + (z - centerY) * 0.2;
                 
@@ -634,19 +663,18 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             ctx.stroke();
             
             // ラベル
-            ctx.fillStyle = '#ffffff';
+            ctx.fillStyle = '#2d3436';
             ctx.font = '16px Arial';
             ctx.fillText(isEnglish ? 'Time t' : '時間 t', centerX + 120, centerY + 70);
-            ctx.fillText(isEnglish ? 'F(t)' : 'F(t)', centerX - 10, centerY - 120);
-            ctx.fillText(isEnglish ? 'f(t)' : 'f(t)', centerX + 80, centerY - 30);
+            ctx.fillText('F(t)', centerX - 10, centerY - 120);
+            ctx.fillText('f(t)', centerX + 80, centerY - 30);
             
             // 数式の視覚化
-            ctx.fillStyle = '#ffeaa7';
+            ctx.fillStyle = '#636e72';
             ctx.font = '12px monospace';
             ctx.fillText('∫₀ᵗ λe^(-λs) ds', centerX - 100, centerY + 140);
         }
         
-        // 言語切替時にグラフも更新
         function switchLang(lang) {
             currentLang = lang;
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -657,13 +685,11 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             });
             document.getElementById(`content-${lang}`).style.display = 'block';
             
-            // Update screen 1 text
             document.getElementById('mainTitle').textContent = translations[lang].mainTitle;
             document.getElementById('yearUnit').textContent = translations[lang].yearUnit;
             document.getElementById('navButton').textContent = translations[lang].navButton;
             document.getElementById('backText').textContent = translations[lang].backText;
             
-            // 遅延してグラフを描画
             setTimeout(() => {
                 if (lang === 'ja') {
                     drawExponentialGraph('exponentialGraph', false);
@@ -675,7 +701,6 @@ Probability measure: P([0,t]) = ∫₀ᵗ f(s)ds
             }, 100);
         }
         
-        // 初期グラフ描画
         setTimeout(() => {
             drawExponentialGraph('exponentialGraph', false);
             draw3DSurface('integralSurface', false);
