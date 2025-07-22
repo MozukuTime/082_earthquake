@@ -264,26 +264,26 @@
                 <div class="section">
                     <h2 class="section-title">毎日くじ引きをしたら？</h2>
                     <div class="explanation">
-                        地震は<span class="highlight">毎日0.011%の確率のくじ引き</span>と同じです。<br>
-                        30年間毎日引き続けると、約70%の確率で1回は当たります。
+                        地震は<span class="highlight">毎日0.011%の確率のくじ引き</span>と同じ!<br>
+                        30年間,毎日毎日引き続けると、約70%の確率？？！
                     </div>
                 </div>
 
                 <div class="section">
-                    <h2 class="section-title">くじが当たる = くじが当たらない の逆？</h2>
+                    <h2 class="section-title">くじが"当たる" = くじが"当たらない" の逆？</h2>
                     <div class="comparison-grid">
                         <div class="concept-box wrong">
                             <h4>❌ 間違った計算</h4>
-                            <div class="formula">0.011% × 365日 = 4.0%</div>
+                            <div class="formula">0.011% × 365日 => 4.0%</div>
                         </div>
                         <div class="concept-box correct">
                             <h4>✅ 正しい計算</h4>
-                            <div class="formula">1 - (99.989%)^365 = 3.9%</div>
+                            <div class="formula">1 - (99.989%)^365 => 3.9%</div>
                         </div>
                     </div>
                     <div class="explanation">
-                        連続して当たらない日は何回連続できるのだろうか？<br>
-                        毎日99.989%の確率で「外れ」続ける確率を計算し、最後に「1-」で反転させます。
+                        step1:連続して"当たらない"日は、何回連続？<br>
+                        step2:毎日99.989%で「外れ」続ける確率 -> 最後に「1-」で反転!!
                     </div>
                 </div>
 
@@ -295,8 +295,8 @@ P(t) = 1 - (1 - p)^t<br>
                     </div>
                     <canvas id="exponentialGraph" width="600" height="300" style="background: rgba(255,255,255,0.1); border-radius: 10px; margin: 20px 0;"></canvas>
                     <div class="explanation">
-                        <span class="highlight">(1-p)^t</span>は指数関数です。グラフを見ると、時間と共に急激に減少し、<br>
-                        結果として<span class="highlight">P(t)</span>は急激に増加します。これが「非線形」の正体です。
+                        <span class="highlight">(1-p)^t</span>は指数関数...時間と共に減少し、<br>
+                        結果<span class="highlight">P(t)</span>は増加します。これを「非線形」と表現します。
                     </div>
                 </div>
 
@@ -311,9 +311,9 @@ f(t) = λe^(-λt) (確率密度関数)<br>
 F(t) = 1 - e^(-λt) (累積分布関数)
                     </div>
                     <div class="explanation">
-                        ポアソン過程の核心：毎日が<span class="highlight">「新鮮な気持ち」</span>で始まる。<br>
-                        昨日地震がなかったことは、今日の地震確率に一切影響しません。<br>
-                        過去を忘れる美しいシステムです。
+                        ポアソン過程：毎日が<span class="highlight">「新鮮な気持ち」</span>で感じる。<br>
+                        昨日地震がなかったことは、今日の地震確率に関係ない。<br>
+                        過去がなかったことにする。毎日新鮮！"状態を持たない"!!
                     </div>
                 </div>
 
@@ -327,14 +327,14 @@ P(T ≤ t) = ∫₀ᵗ λe^(-λs) ds = [-e^(-λs)]₀ᵗ = 1 - e^(-λt)<br><br>
                     </div>
                     <canvas id="integralSurface" width="600" height="400" style="background: rgba(255,255,255,0.1); border-radius: 10px; margin: 20px 0;"></canvas>
                     <div class="explanation">
-                        確率は時間軸上の<span class="highlight">測度</span>として表現されます。上の3次元描写では：<br>
+                        確率は時間軸上の<span class="highlight">測度</span>として表現。3次元描写では：<br>
                         • X軸：時間 t<br>
                         • Y軸：確率密度 f(t) = λe^(-λt)<br>
                         • Z軸：累積確率 F(t)<br><br>
-                        曲面下の体積が確率測度を表現しています。<br>
-                        指数分布の優雅な減衰と、積分による累積の幾何学的美しさが見えるでしょう。<br><br>
+                        曲面下の確率測度を表現。<br>
+                        指数分布の減衰と、積分による累積。<br><br>
                         <span class="highlight">無記憶性</span>：P(T > s+t | T > s) = P(T > t) = e^(-λt)<br>
-                        これは条件付き確率の幾何学的な「平行移動不変性」を意味します。
+                        これは条件付き確率の幾何学的な「平行移動不変性」。
                     </div>
                 </div>
             </div>
